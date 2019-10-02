@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {shallow} from 'enzyme';
+import {findTagsWithTestAttribute} from '../testUtils';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+it('renders without errors', () => {
+  const wrapper = shallow(<App />);
+  expect(findTagsWithTestAttribute(wrapper, 'component-App').length).toBe(1);
 });
