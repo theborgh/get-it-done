@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
-import Footer from './components/Footer/Footer';
 import './App.css';
 
 const AppWrapper = styled.section`
@@ -16,7 +15,6 @@ function App() {
       <AppWrapper>
         <Navbar />
         <Sidebar />
-        <Footer />
       </AppWrapper>
     </div>
   );
