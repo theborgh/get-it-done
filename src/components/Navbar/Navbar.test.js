@@ -13,7 +13,7 @@ describe('renders', () => {
 
   it('renders at least one link', () => {
     expect(
-      findTagsWithTestAttribute(wrapper, 'component-link').length
+      findTagsWithTestAttribute(wrapper, 'component-Link').length
     ).toBeGreaterThan(0);
   });
 });
