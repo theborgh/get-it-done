@@ -1,29 +1,73 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import './Sidebar.scss';
 
-const Sidebar = () => {
+interface Project {
+  name: string;
+}
+
+const Sidebar = ({projects}: {projects: Project[]}) => {
   return (
     <div className='Sidebar' data-test='component-Sidebar'>
       <div className='Sidebar-section'>
         Capture
-        <div className='Sidebar-menuitem'>Inbox</div>
+        <NavLink
+          to='/inbox'
+          className='Sidebar-menuitem'
+          activeClassName='Sidebar-activelink'
+        >
+          Inbox
+        </NavLink>
       </div>
+
       <div className='Sidebar-section'>
         Actions
-        <div className='Sidebar-menuitem'>Next</div>
-        <div className='Sidebar-menuitem'>Waiting</div>
-        <div className='Sidebar-menuitem'>Scheduled</div>
-        <div className='Sidebar-menuitem'>Someday</div>
+        <NavLink
+          to='/next'
+          className='Sidebar-menuitem'
+          activeClassName='Sidebar-activelink'
+        >
+          Next
+        </NavLink>
+        <NavLink
+          to='/waiting'
+          className='Sidebar-menuitem'
+          activeClassName='Sidebar-activelink'
+        >
+          Waiting
+        </NavLink>
+        <NavLink
+          to='/scheduled'
+          className='Sidebar-menuitem'
+          activeClassName='Sidebar-activelink'
+        >
+          Scheduled
+        </NavLink>
+        <NavLink
+          to='/someday'
+          className='Sidebar-menuitem'
+          activeClassName='Sidebar-activelink'
+        >
+          Someday
+        </NavLink>
       </div>
+
       <div className='Sidebar-section'>
         Focus
-        <div className='Sidebar-menuitem'>Today</div>
+        <NavLink
+          to='/today'
+          className='Sidebar-menuitem'
+          activeClassName='Sidebar-activelink'
+        >
+          Today
+        </NavLink>
       </div>
+
       <div className='Sidebar-section'>
         Projects
-        <div className='Sidebar-menuitem'>Project #1</div>
-        <div className='Sidebar-menuitem'>Project #2</div>
-        <div className='Sidebar-menuitem'>Project #3</div>
+        {projects.map(project => (
+          <div className='Sidebar-menuitem'>{project.name}</div>
+        ))}
       </div>
     </div>
   );
