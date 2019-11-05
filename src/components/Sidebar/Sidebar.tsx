@@ -1,53 +1,30 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const SidebarWrapper = styled.section`
-  background-color: violet;
-  position: fixed;
-  left: 0;
-  height: 100%;
-  width: 14rem;
-`;
-
-const SidebarSection = styled.section`
-  width: 100%;
-  background-color: pink;
-  font-weight: bold;
-  margin: 0.5rem 0;
-`;
-
-const MenuItem = styled.a`
-  display: block;
-  background-color: lightpink;
-  font-weight: normal;
-`;
+import './Sidebar.scss';
 
 const Sidebar = () => {
   return (
-    <div data-test='component-Sidebar'>
-      <SidebarWrapper>
-        <SidebarSection>
-          Capture
-          <MenuItem>Inbox</MenuItem>
-        </SidebarSection>
-        <SidebarSection>
-          Actions
-          <MenuItem>Next</MenuItem>
-          <MenuItem>Waiting</MenuItem>
-          <MenuItem>Scheduled</MenuItem>
-          <MenuItem>Someday</MenuItem>
-        </SidebarSection>
-        <SidebarSection>
-          Focus
-          <MenuItem>Today</MenuItem>
-        </SidebarSection>
-        <SidebarSection>
-          Projects
-          <MenuItem>Project #1</MenuItem>
-          <MenuItem>Project #2</MenuItem>
-          <MenuItem>Project #3</MenuItem>
-        </SidebarSection>
-      </SidebarWrapper>
+    <div className='Sidebar' data-test='component-Sidebar'>
+      <div className='Sidebar-section'>
+        Capture
+        <div className='Sidebar-menuitem'>Inbox</div>
+      </div>
+      <div className='Sidebar-section'>
+        Actions
+        <div className='Sidebar-menuitem'>Next</div>
+        <div className='Sidebar-menuitem'>Waiting</div>
+        <div className='Sidebar-menuitem'>Scheduled</div>
+        <div className='Sidebar-menuitem'>Someday</div>
+      </div>
+      <div className='Sidebar-section'>
+        Focus
+        <div className='Sidebar-menuitem'>Today</div>
+      </div>
+      <div className='Sidebar-section'>
+        Projects
+        <div className='Sidebar-menuitem'>Project #1</div>
+        <div className='Sidebar-menuitem'>Project #2</div>
+        <div className='Sidebar-menuitem'>Project #3</div>
+      </div>
     </div>
   );
 };

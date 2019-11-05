@@ -1,0 +1,16 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightslategray;
+
+  &-link {
+    color: navy;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+
+    :active,
+    :hover {
+      text-decoration: none;
+    }
+  }
+}

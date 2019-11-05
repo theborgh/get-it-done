@@ -1,0 +1,20 @@
+.Sidebar {
+  background-color: violet;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  width: 14rem;
+
+  &-section {
+    width: 100%;
+    background-color: pink;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+
+  &-menuitem {
+    display: block;
+    background-color: lightpink;
+    font-weight: normal;
+  }
+}
