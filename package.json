@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/react": "^16.9.4",
+    "@types/react-router-dom": "^5.1.2",
     "@types/styled-components": "^4.1.19",
     "node-sass": "^4.13.0",
     "react": "^16.10.1",

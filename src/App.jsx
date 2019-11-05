@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Switch, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import TaskArea from './components/TaskArea/TaskArea';
@@ -11,8 +12,12 @@ function App() {
   return (
     <div className='App' data-test='component-App'>
       <Navbar />
-      <Sidebar />
-      <TaskArea todoList={demoTasks} />
+
+
+      <Switch>
+        <Route path="/" exact render={() => <div><Sidebar /> <TaskArea todoList={demoTasks} /></div>} />
+        <Route path="/about" exact render={() => <h1>About us</h1>} />
+      </Switch>
     </div>
   );
 }
