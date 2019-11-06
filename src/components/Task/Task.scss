@@ -1,0 +1,14 @@
+.Task {
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  padding: .3rem;
+
+  &-text {
+    font-size: 1.3rem;
+    display: inline-block;
+  }
+
+  &-checkbox {
+    display: inline-block;
+  }
+}

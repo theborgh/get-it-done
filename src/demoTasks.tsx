@@ -35,4 +35,25 @@ export default {
       completed: false,
     },
   ],
+
+  scheduled: [
+    {
+      text: 'Doctor checkup',
+      completed: false,
+    },
+  ],
+
+  someday: [
+    {
+      text: 'Climb Everest',
+      completed: false,
+    },
+  ],
+
+  today: [
+    {
+      text: 'Buy groceries',
+      completed: false,
+    },
+  ],
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import Task from '../Task/Task';
 import './TaskArea.scss';
 
 interface Todo {
@@ -8,9 +9,7 @@ interface Todo {
 const TaskArea = ({todoList}: {todoList: Todo[]}) => {
   return (
     <div className='TaskArea' data-test='component-TaskArea'>
-      {todoList
-        ? todoList.map(todo => <div className='TaskArea-task'>{todo.text}</div>)
-        : null}
+      {todoList && todoList.map(todo => <Task text={todo.text} />)}
     </div>
   );
 };

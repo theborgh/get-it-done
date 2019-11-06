@@ -1,11 +1,12 @@
 .Navbar {
   display: flex;
   justify-content: space-between;
-  background-color: lightslategray;
+  background-color: rgb(98, 132, 167);
+  padding: .3rem;
 
   &-link {
     color: navy;
-    font-size: 1rem;
+    font-size: 1.4rem;
     padding: 0.5rem 1rem;
 
     :active,

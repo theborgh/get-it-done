@@ -18,8 +18,12 @@ function App() {
 
       <Switch>
         <Route path="/about" exact render={() => <AboutPage />} />
+        <Route path="/next" render={() => <TaskArea todoList={tasks.next} />} />
         <Route path="/inbox" exact render={() => <TaskArea todoList={tasks.inbox} />} />
-        <Route path="/" render={() => <TaskArea todoList={tasks.next} />} />
+        <Route path="/waiting" exact render={() => <TaskArea todoList={tasks.waiting} />} />
+        <Route path="/scheduled" exact render={() => <TaskArea todoList={tasks.scheduled} />} />
+        <Route path="/someday" exact render={() => <TaskArea todoList={tasks.someday} />} />
+        <Route path="/today" exact render={() => <TaskArea todoList={tasks.today} />} />
       </Switch>
     </div>
   );

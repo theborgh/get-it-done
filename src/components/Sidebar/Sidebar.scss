@@ -1,25 +1,29 @@
 .Sidebar {
-  background-color: violet;
+  background-color: whitesmoke;
   position: fixed;
   left: 0;
   height: 100%;
   width: 14rem;
+  box-shadow: 9px -4px 5px -6px rgba(0, 0, 0, 0.75);
 
   &-section {
     width: 100%;
-    background-color: pink;
     font-weight: bold;
     margin: 0.5rem 0;
+    font-size: 1.4rem;
   }
 
   &-menuitem {
     display: block;
-    background-color: lightpink;
     font-weight: normal;
     text-decoration: none;
+    font-size: 1.3rem;
+    padding: .2rem;
   }
 
   &-activelink {
     font-weight: bold;
+    background-color: lightgray;
+    border-left: 4px solid blue;
   }
 }
