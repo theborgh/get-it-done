@@ -64,10 +64,28 @@ const Sidebar = ({projects}: {projects: Project[]}) => {
       </div>
 
       <div className='Sidebar-section'>
-        Projects
+        My Projects
         {projects.map(project => (
           <div className='Sidebar-menuitem'>{project.name}</div>
         ))}
+      </div>
+
+      <div className='Sidebar-section'>
+        Cleanup
+        <NavLink
+          to='/logbook'
+          className='Sidebar-menuitem'
+          activeClassName='Sidebar-activelink'
+        >
+          Logbook
+        </NavLink>
+        <NavLink
+          to='/trash'
+          className='Sidebar-menuitem'
+          activeClassName='Sidebar-activelink'
+        >
+          Trash
+        </NavLink>
       </div>
     </div>
   );
