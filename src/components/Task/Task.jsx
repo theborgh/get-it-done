@@ -10,13 +10,6 @@ export default function Task({
   id,
   toggleTaskCompletion,
   editTask,
-}: {
-  text: string;
-  completed: boolean;
-  removeTask: Function;
-  id: string;
-  toggleTaskCompletion: Function;
-  editTask: Function;
 }) {
   const [isEditing, toggleIsEditing] = useToggle();
 
@@ -30,17 +23,19 @@ export default function Task({
           toggleIsEditing={toggleIsEditing}
         />
       ) : (
-        <>
-          <div className='Task-text'>{text}</div>
-          <div className='Task-checkbox'>
-            <input
-              type='checkbox'
-              checked={completed}
-              onClick={() => toggleTaskCompletion(id)}
-            />
-          </div>
-        </>
-      )}
+          <>
+            <div className='Task-text'>{text}</div>
+            <div className='Task-checkbox'>
+              <input
+                type='checkbox'
+                checked={completed}
+                onClick={() => toggleTaskCompletion(id)}
+              />
+              <button onClick={toggleIsEditing}>Edit</button>
+              <button onClick={() => removeTask(id)}>Delete</button>
+            </div>
+          </>
+        )}
     </div>
   );
 }
