@@ -33,7 +33,7 @@ function App() {
 
         <Route path="/next" render={() =>
           <TaskArea
-            todoList={tasks.filter(todo => todo.area === "next")}
+            taskList={tasks.filter(task => task.area === "next")}
             addTask={addTask}
             removeTask={removeTask}
             toggleTaskCompletion={toggleTaskCompletion}
@@ -41,19 +41,55 @@ function App() {
         />
 
         <Route path="/inbox" exact render={() =>
-          <TaskArea todoList={tasks.filter(todo => todo.area === "inbox")}
+          <TaskArea taskList={tasks.filter(task => task.area === "inbox")}
             addTask={addTask}
             removeTask={removeTask}
             toggleTaskCompletion={toggleTaskCompletion}
             editTask={editTask} />}
         />
 
-        <Route path="/waiting" exact render={() => <TaskArea todoList={tasks.filter(todo => todo.area === "waiting")} addTask={addTask} removeTask={removeTask} toggleTaskCompletion={toggleTaskCompletion} editTask={editTask} />} />
-        <Route path="/scheduled" exact render={() => <TaskArea todoList={tasks.filter(todo => todo.area === "scheduled")} addTask={addTask} removeTask={removeTask} toggleTaskCompletion={toggleTaskCompletion} editTask={editTask} />} />
-        <Route path="/someday" exact render={() => <TaskArea todoList={tasks.filter(todo => todo.area === "someday")} addTask={addTask} removeTask={removeTask} toggleTaskCompletion={toggleTaskCompletion} editTask={editTask} />} />
-        <Route path="/today" exact render={() => <TaskArea todoList={tasks.filter(todo => todo.area === "today")} />} addTask={addTask} removeTask={removeTask} toggleTaskCompletion={toggleTaskCompletion} editTask={editTask} />
-        <Route path="/logbook" exact render={() => <TaskArea todoList={tasks.filter(todo => todo.area === "logbook")} addTask={addTask} removeTask={removeTask} toggleTaskCompletion={toggleTaskCompletion} editTask={editTask} />} />
-        <Route path="/trash" exact render={() => <TaskArea todoList={tasks.filter(todo => todo.area === "trash")} />} addTask={addTask} removeTask={removeTask} toggleTaskCompletion={toggleTaskCompletion} editTask={editTask} />
+        <Route path="/waiting" exact render={() => <TaskArea taskList={tasks.filter(task => task.area === "waiting")}
+          addTask={addTask}
+          removeTask={removeTask}
+          toggleTaskCompletion={toggleTaskCompletion}
+          editTask={editTask} />}
+        />
+
+        <Route path="/scheduled" exact render={() => <TaskArea taskList={tasks.filter(task => task.area === "scheduled")}
+          addTask={addTask}
+          removeTask={removeTask}
+          toggleTaskCompletion={toggleTaskCompletion}
+          editTask={editTask} />}
+        />
+
+        <Route path="/someday" exact render={() => <TaskArea taskList={tasks.filter(task => task.area === "someday")}
+          addTask={addTask}
+          removeTask={removeTask}
+          toggleTaskCompletion={toggleTaskCompletion}
+          editTask={editTask} />}
+        />
+
+        <Route path="/today" exact render={() => <TaskArea taskList={tasks.filter(task => task.area === "today")} />}
+          addTask={addTask}
+          removeTask={removeTask}
+          toggleTaskCompletion={toggleTaskCompletion}
+          editTask={editTask} />}
+        />
+
+        <Route path="/logbook" exact render={() => <TaskArea taskList={tasks.filter(task => task.area === "logbook")}
+          addTask={addTask}
+          removeTask={removeTask}
+          toggleTaskCompletion={toggleTaskCompletion}
+          editTask={editTask} />}
+        />
+
+        <Route path="/trash" exact render={() => <TaskArea taskList={tasks.filter(task => task.area === "trash")} />}
+          addTask={addTask}
+          removeTask={removeTask}
+          toggleTaskCompletion={toggleTaskCompletion}
+          editTask={editTask} />}
+        />
+                
       </Switch>
     </div>
   );
