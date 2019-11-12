@@ -2,13 +2,19 @@
   background-color: whitesmoke;
   border: 1px solid gray;
   padding: .3rem;
+  cursor: pointer;
 
   &-text {
     font-size: 1.3rem;
     display: inline-block;
+    margin-right: .5rem;
   }
 
-  &-checkbox {
+  &-buttons {
     display: inline-block;
+  }
+
+  &-details {
+    height: 5rem;
   }
 }

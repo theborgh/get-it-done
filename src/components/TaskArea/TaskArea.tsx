@@ -27,7 +27,7 @@ const TaskArea = ({
 }) => {
   return (
     <div className='TaskArea' data-test='component-TaskArea'>
-      <TaskForm addTask={addTask} />
+      Add a task to Inbox: <TaskForm addTask={addTask} />
       {taskList ? (
         taskList.map(task => (
           <Task

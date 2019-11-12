@@ -12,9 +12,10 @@ export default function Task({
   editTask,
 }) {
   const [isEditing, toggleIsEditing] = useToggle();
+  const [isShowingTaskDetails, toggleIsShowingTaskDetails] = useToggle();
 
   return (
-    <div className='Task'>
+    <div className='Task' onClick={toggleIsShowingTaskDetails}>
       {isEditing ? (
         <EditTaskForm
           editTodo={editTask}
@@ -24,16 +25,20 @@ export default function Task({
         />
       ) : (
           <>
-            <div className='Task-text'>{text}</div>
-            <div className='Task-checkbox'>
+            <div className='Task-buttons'>
               <input
                 type='checkbox'
                 checked={completed}
-                onClick={() => toggleTaskCompletion(id)}
+                onClick={(evt) => { evt.stopPropagation(); toggleTaskCompletion(id) }}
               />
-              <button onClick={toggleIsEditing}>Edit</button>
-              <button onClick={() => removeTask(id)}>Delete</button>
             </div>
+            <div className='Task-text'>{text}</div>
+            <div className='Task-buttons'>
+
+              <button onClick={(evt) => { evt.stopPropagation(); toggleIsEditing(); }}>Edit</button>
+              <button onClick={(evt) => { evt.stopPropagation(); removeTask(id) }}>Delete</button>
+            </div>
+            {isShowingTaskDetails && <div className="Task-details">Task details</div>}
           </>
         )}
     </div>
