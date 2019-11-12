@@ -28,7 +28,7 @@ export default function Task({
             <div className='Task-buttons'>
               <input
                 type='checkbox'
-                checked={completed}
+                defaultChecked={completed}
                 onClick={(evt) => { evt.stopPropagation(); toggleTaskCompletion(id) }}
               />
             </div>

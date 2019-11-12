@@ -1,13 +1,13 @@
-import useLocalStorageState from './useLocalStorageState';
-import uuid from 'uuid/v4';
+import useLocalStorageState from "./useLocalStorageState";
+import uuid from "uuid/v4";
 
 export default initialTasks => {
-  const [tasks, setTasks] = useLocalStorageState('tasks', initialTasks);
+  const [tasks, setTasks] = useLocalStorageState("tasks", initialTasks);
 
-  const addTask = newTaskText => {
+  const addTask = (newTaskText, taskArea) => {
     setTasks([
       ...tasks,
-      {id: uuid(), text: newTaskText, completed: false, area: 'inbox'},
+      { id: uuid(), text: newTaskText, completed: false, area: taskArea }
     ]);
   };
 
@@ -18,16 +18,18 @@ export default initialTasks => {
   const toggleTaskCompletion = taskId => {
     setTasks(
       tasks.map(task =>
-        task.id === taskId ? {...task, completed: !task.completed} : task
+        task.id === taskId ? { ...task, completed: !task.completed } : task
       )
     );
   };
 
   const editTask = (taskId, newText) => {
     setTasks(
-      tasks.map(task => (task.id === taskId ? {...task, text: newText} : task))
+      tasks.map(task =>
+        task.id === taskId ? { ...task, text: newText } : task
+      )
     );
   };
 
-  return {tasks, addTask, removeTask, toggleTaskCompletion, editTask};
+  return { tasks, addTask, removeTask, toggleTaskCompletion, editTask };
 };

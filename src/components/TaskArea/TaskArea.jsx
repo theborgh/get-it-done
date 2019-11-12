@@ -3,14 +3,6 @@ import Task from '../Task/Task';
 import TaskForm from '../TaskForm/TaskForm';
 import './TaskArea.scss';
 
-interface Task {
-  text: string;
-  completed: boolean;
-  removeTask: Function;
-  id: string;
-  toggleTaskCompletion: Function;
-  editTask: Function;
-}
 
 const TaskArea = ({
   taskList,
@@ -18,19 +10,17 @@ const TaskArea = ({
   removeTask,
   toggleTaskCompletion,
   editTask,
-}: {
-  taskList: Task[];
-  addTask: Function;
-  removeTask: Function;
-  toggleTaskCompletion: Function;
-  editTask: Function;
+  match,
 }) => {
+  const taskArea = match.path.substr(1);
+
   return (
     <div className='TaskArea' data-test='component-TaskArea'>
-      Add a task to Inbox: <TaskForm addTask={addTask} />
+      Add a task to {taskArea}: <TaskForm addTask={addTask} taskArea={taskArea} />
       {taskList ? (
         taskList.map(task => (
           <Task
+            key={task.id}
             text={task.text}
             completed={task.completed}
             removeTask={removeTask}
@@ -40,8 +30,8 @@ const TaskArea = ({
           />
         ))
       ) : (
-        <p>No tasks present</p>
-      )}
+          <p>No tasks present</p>
+        )}
     </div>
   );
 };

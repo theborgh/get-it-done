@@ -1,25 +1,24 @@
-import React from 'react';
-import useInputState from '../../hooks/useInputState';
+import React from "react";
+import useInputState from "../../hooks/useInputState";
 
-export default function TaskForm({addTask}) {
-  const [value, handleChange, reset] = useInputState('');
+export default function TaskForm({ addTask, taskArea }) {
+  const [taskText, handleChange, reset] = useInputState("");
 
   return (
     <div>
       <form
         onSubmit={e => {
           e.preventDefault();
-          addTask(value);
+          addTask(taskText, taskArea);
           reset();
         }}
       >
         <input
-          type='text'
-          value={value}
+          type="text"
+          value={taskText}
           onChange={handleChange}
-          margin='normal'
-          label='Add new Task'
-          fullWidth
+          margin="normal"
+          label="Add new Task"
         />
       </form>
     </div>
