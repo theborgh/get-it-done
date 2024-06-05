@@ -56,6 +56,12 @@ const demoTasks = {
       completed: false,
       notes: "",
     },
+    {
+      id: () => hyphenize(this.text),
+      text: "New waiting task in base",
+      completed: false,
+      notes: "",
+    },
   ],
 
   scheduled: [
