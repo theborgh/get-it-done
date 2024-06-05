@@ -47,6 +47,12 @@ const demoTasks = {
       completed: false,
       notes: "",
     },
+    {
+      id: () => hyphenize(this.text),
+      text: "New next task in feature branch",
+      completed: false,
+      notes: "",
+    },
   ],
 
   waiting: [
