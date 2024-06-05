@@ -1,81 +1,87 @@
-const hyphenize = text => text.toLowerCase().replace(/ /g, '-');
+const hyphenize = (text) => text.toLowerCase().replace(/ /g, "-");
 
 const demoTasks = {
   inbox: [
     {
       id: () => hyphenize(this.text),
-      text: 'Remember not to forget',
+      text: "Remember not to forget",
       completed: false,
-      notes: '',
+      notes: "",
     },
     {
       id: () => hyphenize(this.text),
-      text: 'Forget not to remember',
+      text: "Forget not to remember",
       completed: false,
-      notes: '',
+      notes: "",
     },
     {
       id: () => hyphenize(this.text),
-      text: 'Buy gold',
+      text: "Buy gold",
       completed: false,
-      notes: '',
+      notes: "",
+    },
+    {
+      id: () => hyphenize(this.text),
+      text: "Another task",
+      completed: false,
+      notes: "",
     },
   ],
 
   next: [
     {
       id: () => hyphenize(this.text),
-      text: 'Reach these kids',
+      text: "Reach these kids",
       completed: false,
-      notes: 'This is an extra note',
+      notes: "This is an extra note",
     },
     {
       id: () => hyphenize(this.text),
-      text: 'Buy golden apples',
+      text: "Buy golden apples",
       completed: false,
-      notes: '',
+      notes: "",
     },
     {
       id: () => hyphenize(this.text),
-      text: 'Walk dog',
+      text: "Walk dog",
       completed: false,
-      notes: '',
+      notes: "",
     },
   ],
 
   waiting: [
     {
       id: () => hyphenize(this.text),
-      text: 'Car repair',
+      text: "Car repair",
       completed: false,
-      notes: '',
+      notes: "",
     },
   ],
 
   scheduled: [
     {
       id: () => hyphenize(this.text),
-      text: 'Doctor checkup',
+      text: "Doctor checkup",
       completed: false,
-      notes: '',
+      notes: "",
     },
   ],
 
   someday: [
     {
       id: () => hyphenize(this.text),
-      text: 'Climb Everest',
+      text: "Climb Everest",
       completed: false,
-      notes: '',
+      notes: "",
     },
   ],
 
   today: [
     {
       id: () => hyphenize(this.text),
-      text: 'Buy groceries',
+      text: "Buy groceries",
       completed: false,
-      notes: '',
+      notes: "",
     },
   ],
 };
